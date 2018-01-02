@@ -3,83 +3,83 @@ var gameTimer;
 var timeAllotted = 30; //seconds
 
 var questionBank = [{
-        question: "What is the capital of Alaska?",
+        question: " Which of the following function of Number object formats a number with a specific number of digits to the right of the decimal?",
         answers: [{
                 ansID: 1000,
-                answer: "Anchorage"
+                answer: "toExponential()"
             },
             {
                 ansID: 1001,
-                answer: "Barrow"
+                answer: "toPrecision()"
             },
             {
                 ansID: 1002,
-                answer: "Juneau"
+                answer: "toFixed()"
             },
             {
                 ansID: 1003,
-                answer: "Fairbanks"
+                answer: "tolocalString()"
             },
         ],
         correct: 1002,
         selected: null,
-        reason: "It's Juneau, which still has a population of less than 33,000. Yikes."
+        reason: "toFixed() −- Formats a number with a specific number of digits to the right of the decimal."
     },
     {
-        question: "Who founded the US Treasury?",
+        question: "What does API stand for?",
         answers: [{
                 ansID: 1003,
-                answer: "James Madison"
+                answer: " Application Protocol Interface"
             },
             {
                 ansID: 1004,
-                answer: "Alexander Hamilton"
+                answer: "Application Program Interface"
             },
             {
                 ansID: 1005,
-                answer: "Benjamin Franlkin"
+                answer: " Applied Program Interface"
             },
             {
                 ansID: 1006,
-                answer: "Andrew Jackson"
+                answer: "Application Protocol Integration"
             },
         ],
         correct: 1004,
         selected: null,
-        reason: "Alexander Hamilton was a major contrinutor to the strucure of the formative years of the US government. Arguably his largest contribution, apart from being a major contributor to maturing the constitution itself, was managing and growing the fledgling US credit system."
+        reason: "An application program interface (API) is a set of routines, protocols, and tools for building software applications."
     },
     {
-        question: "Who is the first American born president?",
+        question: "What is a closure?",
         answers: [{
                 ansID: 1007,
-                answer: "George Washington"
+                answer: "The correct way to end a function"
             },
             {
                 ansID: 1008,
-                answer: "Thomas Jefferson"
+                answer: "A command that stops a loop"
             },
             {
                 ansID: 1009,
-                answer: "Andrew Jackson"
+                answer: "A method used to check for null"
             },
             {
                 ansID: 1010,
-                answer: "Martin Van Buren"
+                answer: "A function within a function"
             },
         ],
         correct: 1010,
         selected: null,
-        reason: "Martin Van Buren was born in December 5th, 1782 in Kinderhook, NY. The first president not born under British rule and the first president not of British ancestry. He was of Dutch lineage."
+        reason: "A closure is an inner function that has access to the outer (enclosing) function's variables—scope chain which makes it a function withon a."
     },
     {
-        question: "Which was not a part of the original 13 colonies?",
+        question: "What is the value of the following expression? 8 % 3",
         answers: [{
                 ansID: 1011,
-                answer: "Vermont"
+                answer: "2"
             },
             {
                 ansID: 1012,
-                answer: "Georgia"
+                answer: "5"
             },
             {
                 ansID: 1012,
@@ -87,37 +87,14 @@ var questionBank = [{
             },
             {
                 ansID: 1013,
-                answer: "Pennsylvania"
+                answer: "Nan"
             },
         ],
         correct: 1011,
         selected: null,
-        reason: "Vermont was the 14th state which joined on March 4th, 1791."
+        reason: "% is known as a modulo operator and it is used to get the remainder after integer division. "
     },
-    {
-        question: "How many time zones does the USA have?",
-        answers: [{
-                ansID: 1014,
-                answer: "Three"
-            },
-            {
-                ansID: 1015,
-                answer: "Four"
-            },
-            {
-                ansID: 1016,
-                answer: "Five"
-            },
-            {
-                ansID: 1017,
-                answer: "Six"
-            },
-        ],
-        correct: 1017,
-        selected: null,
-        reason: "Eastern, Central, Mountain, Pacific, Alaskan, and Hawaii-Aleutian"
-    },
-];
+]
 
 function populateQuestionDetails() {
     $("#answer-response").hide();
@@ -209,9 +186,7 @@ $("#start").on("click", function () {
     populateQuestionDetails(quesIndex);
 });
 
-/*
-Here's a neat trick: for elements that are dynamically created existing handlers pointed to that type of element (via class or id, whichever) will not be automatically bound. Instead of $("[.|#]identifier").on("click", function) bind it to the document for it's id/class as shown below.
-*/
+
 $(document).on("click", ".answer", processAnswer);
 
 $("#previousQ").on("click", getPreviousQuestion);
@@ -246,8 +221,6 @@ function processResults() {
             status = "Incorrect!";
         }
 
-        //sorry the below is verbose. I know :( I could only see so far ahead. If I had more time I'd refactor it to end cleaner.
-
         if (questionBank[i].selected !== null) {
             //get selected text
             var selectedText = "NA";
@@ -260,7 +233,7 @@ function processResults() {
         } else {
             selectedText = "--";
         }
-        //get correct ans text
+        // Correct Answer Text
         var correctText = "NA";
         for (var k = 0; k < questionBank[i].answers.length; k++) {
             if (questionBank[i].answers[k].ansID === questionBank[i].correct) {

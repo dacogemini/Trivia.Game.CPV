@@ -22,19 +22,21 @@
 <div class="container">
     <header>
         <div class="col-md-8 col-md-offset-2">
-            <h1><center>CODING 101</center></h1>
+            <h1 class="title">CODING 101</h1>
             <hr>
         </div>
     </header>
 
-    <div id="main-game">
-
+    <div id="main-game" class="main-game">
+      
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
+                <center>
                 <div class="timer text-center" id="game-timer">30</div>
+                </center>
                 <div class="jumbotron text-center" id="question-container">I am a Question???
                 </div>
-
+              
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
                         <div class="text-center" id="answers-container">
@@ -42,6 +44,7 @@
                             <div class="answer" data-content="1001">I am an answer.</div>
                             <div class="answer" data-content="1002">I am an answer.</div>
                             <div class="answer" data-content="1003">I am an answer.</div>
+                       
                         </div>
                     </div>
                 </div>
@@ -75,7 +78,7 @@
                 <div class="jumbotron text-center">
                     <h2>Welcome to Coding Trivia!
                         <br>Good Luck!</h2>
-                    <div class="small">(This is a timed quiz of only 30 seconds)</div>
+                    <div class="small">(You Have 30 seconds to Complete the Quiz)</div>
                 </div>
             </div>
         </div>
@@ -89,7 +92,7 @@
     <div id="results-display" class="container top-buffer">
         <div class="row">
             <div class="col-md-offset-2 col-md-8 text-center">
-                <h4>Here's how you did.</h4>
+                <h4>RESULTS:</h4>
                 <div class="well" id="answerHistory">
                     <table class="table">
                         <thead>
