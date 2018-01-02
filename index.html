@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia 101</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Teko" rel="stylesheet">
+    <link rel="stylesheet" href="assets/trivia.game.css">
+</head>
+
+<body>
+<div class="container">
+    <header>
+        <div class="col-md-8 col-md-offset-2">
+            <h1><center>CODING 101</center></h1>
+            <hr>
+        </div>
+    </header>
+
+    <div id="main-game">
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="timer text-center" id="game-timer">30</div>
+                <div class="jumbotron text-center" id="question-container">I am a Question???
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="text-center" id="answers-container">
+                            <div class="answer" data-content="1000">I am an answer.</div>
+                            <div class="answer" data-content="1001">I am an answer.</div>
+                            <div class="answer" data-content="1002">I am an answer.</div>
+                            <div class="answer" data-content="1003">I am an answer.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row top-buffer">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="well" id="answer-response">I am the explanation to the answer.</div>
+            </div>
+        </div>
+
+        <hr>
+
+        <footer>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <button class="btn btn-primary pull-left" id="previousQ">&nbsp;Previous&nbsp;</button>
+                    <button class="btn btn-primary pull-right" id="nextQ">&nbsp;&nbsp;&nbsp;&nbsp;Next&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    <button class="btn btn-primary pull-right" id="finish">&nbsp;&nbsp;Finish&nbsp;&nbsp;</button>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <div id="splash-screen" class="container top-buffer">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="jumbotron text-center">
+                    <h2>Welcome to Coding Trivia!
+                        <br>Good Luck!</h2>
+                    <div class="small">(This is a timed quiz of only 30 seconds)</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8 text-center">
+                <button id="start" class="btn btn-primary btn-lg">Start Coding</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="results-display" class="container top-buffer">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8 text-center">
+                <h4>Here's how you did.</h4>
+                <div class="well" id="answerHistory">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>You answered</th>
+                                <th>The correct answer</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="result-rows">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8 text-center">
+                <button id="restart" class="btn btn-lg btn-primary">Restart</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- SCRIPTS -->
+<script src="assets/game.js"></script>
+</body>
+
+</html>
